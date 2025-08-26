@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Edit Blogpost</title>
+</head>
+<body>
+  <h1>Edit Blogpost</h1>
+
+  <form action="/edit/{{ post['id'] }}" method="post" accept-charset="UTF-8">
+    <div>
+      <label for="author">Name </label><br />
+      <input id="author" name="author" type="text" value="{{ post['author'] }}" required />
+    </div>
+
+    <div>
+      <label for="title">Title</label><br />
+      <input id="title" name="title" type="text" value="{{ post['title'] }}" required />
+    </div>
+
+    <div>
+      <label for="content">Content</label><br />
+      <textarea id="content" name="content" rows="10" cols="60" required>{{ post['content'] }}</textarea>
+    </div>
+
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</body>
+</html>
