@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>New Blogpost</title>
+</head>
+<body>
+  <h1>Write your own Blogpost</h1>
+
+  <form action="/add" method="post" accept-charset="UTF-8">
+    <div>
+      <label for="author">Name </label><br />
+      <input id="author" name="author" type="text" required />
+    </div>
+
+    <div>
+      <label for="title">Title</label><br />
+      <input id="title" name="title" type="text" required />
+    </div>
+
+    <div>
+      <label for="content">Content</label><br />
+      <textarea id="content" name="content" rows="10" cols="60" required></textarea>
+    </div>
+
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</body>
+</html>
