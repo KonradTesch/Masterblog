@@ -54,16 +54,6 @@ Navigate to the home page to see all published blog posts with their authors, ti
 - Click the "delete" link next to any blog post
 - The post will be permanently removed
 
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Display all blog posts |
-| GET | `/add` | Show new post form |
-| POST | `/add` | Create new blog post |
-| GET | `/edit/<id>` | Show edit form for specific post |
-| POST | `/edit/<id>` | Update specific blog post |
-| GET | `/delete/<id>` | Delete specific blog post |
 
 ## Code Features Demonstrated
 
