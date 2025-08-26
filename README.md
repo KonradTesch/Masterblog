@@ -20,17 +20,17 @@ A simple, lightweight blog application built with Flask that demonstrates core w
 
 ## Installation & Setup
 
-1**Install dependencies:**
+1. **Install dependencies:**
    ```bash
    pip install flask
    ```
 
-2**Run the application:**
+2. **Run the application:**
    ```bash
    python app.py
    ```
 
-3**Open your browser and visit:**
+3. **Open your browser and visit:**
    ```
    http://localhost:5000
    ```
