@@ -9,7 +9,7 @@ def get_json_blog_posts():
 
     return posts_data
 
-def update_json_blog_posts(author, title, content):
+def add_json_blog_posts(author, title, content):
     current_data = get_json_blog_posts()
     next_id = current_data[-1]['id'] + 1
     new_post = {
@@ -22,6 +22,16 @@ def update_json_blog_posts(author, title, content):
     with open('blog_posts.json', 'w', encoding='utf-8') as json_file:
         json.dump(current_data, json_file)
 
+
+def delete_json_blog_posts(index_to_delete):
+    current_data = get_json_blog_posts()
+
+    for post in current_data:
+        if post['id'] == index_to_delete:
+            current_data.remove(post)
+
+            with open('blog_posts.json', 'w', encoding='utf-8') as json_file:
+                json.dump(current_data, json_file)
 
 @app.route('/')
 def index():
@@ -36,10 +46,16 @@ def add():
         title = request.form['title']
         content = request.form['content']
 
-        update_json_blog_posts(author, title, content)
+        add_json_blog_posts(author, title, content)
         return redirect(url_for("index"))
 
     return render_template('add.html')
+
+
+@app.route('/delete/<int:post_index>')
+def delete(post_index):
+    delete_json_blog_posts(post_index)
+    return redirect(url_for("index"))
 
 
 if __name__ == '__main__':
